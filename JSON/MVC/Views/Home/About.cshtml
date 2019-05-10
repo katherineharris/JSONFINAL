@@ -1,7 +1,11 @@
-﻿@{
-    ViewBag.Title = "About";
+﻿@model MVC.Models.About
+@{
+    ViewBag.Title = "Index";
 }
-<h2>@ViewBag.Title.</h2>
-<h3>@ViewBag.Message</h3>
+<h1>About Sooners Football.</h1>
 
-<p>Use this area to provide additional information.</p>
+<h2>About the University of Oklahoma Football Program</h2>
+
+<div>OU Football is coached by <b>@Model.Coach</b>. The Sooners have a bowl record of <b>@Model.Bowl</b> and have a <b>@Model.National</b> National Titles in their history.</div>
+
+
