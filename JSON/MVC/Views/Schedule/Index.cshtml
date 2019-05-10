@@ -1,0 +1,41 @@
+﻿@model IEnumerable<MVC.Models.FootballSchedule>
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>@Model.First().Season Football Schedule</h2>
+
+@foreach (var item in Model)
+{
+    if (item.IsHomeGame == true)
+    {
+        <div class="card" style="margin:5px; width: 200px;height:255px; background-color:darkred; color:white;float:left; border-radius:25px">
+            <span class="glyphicon glyphicon-home" style="font-size:2.2em;color:white"></span>
+            @if (item.Opponent.Trim() == "Texas")
+            {
+                <img src="https://www.thelostogle.com/wp-content/uploads/2010/02/texas-longhorn-logo-450x225.jpg"style="height:30px"/>
+            }
+            <div class="card-body">
+                <h5 class="card-title">OU vs. @item.Opponent</h5>
+                <p class="card-text">@item.Date.ToLongDateString()</p>
+                
+            </div>
+        </div>
+    }
+    if (item.IsHomeGame == false)
+    {
+
+        <div class="card" style="margin:5px; width: 200px;height:255px; background-color:black; color:white;float:left; border-radius:25px">
+            <span class="glyphicon glyphicon-globe" style="font-size:2.2em;color:white"></span>
+            @if (item.Opponent.Trim() == "Texas")
+            {
+                <img src="https://www.thelostogle.com/wp-content/uploads/2010/02/texas-longhorn-logo-450x225.jpg" style="height:30px"/>
+            }
+            <div class="card-body">
+                <h5 class="card-title">OU vs. @item.Opponent</h5>
+                <p class="card-text">@item.Date.ToLongDateString()</p>
+
+            </div>
+        </div>
+    }
+}
